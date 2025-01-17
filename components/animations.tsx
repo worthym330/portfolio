@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-export const FadeIn = ({ children, delay = 0 }) => (
+export const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -12,7 +12,7 @@ export const FadeIn = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-export const FadeInStagger = ({ children }) => (
+export const FadeInStagger = ({ children }: { children: React.ReactNode }) => (
   <motion.div
     initial="hidden"
     animate="visible"
@@ -30,7 +30,7 @@ export const FadeInStagger = ({ children }) => (
   </motion.div>
 );
 
-export const SlideIn = ({ children, direction = 'left', delay = 0 }) => {
+export const SlideIn = ({ children, direction = 'left', delay = 0 }: { children: React.ReactNode; direction?: 'left' | 'right' | 'up' | 'down'; delay?: number }) => {
   const directionOffset = {
     left: { x: -100 },
     right: { x: 100 },
@@ -49,7 +49,7 @@ export const SlideIn = ({ children, direction = 'left', delay = 0 }) => {
   );
 };
 
-export const ScaleIn = ({ children, delay = 0 }) => (
+export const ScaleIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -59,7 +59,7 @@ export const ScaleIn = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-export const AnimatedCard = ({ children }) => (
+export const AnimatedCard = ({ children }: { children: React.ReactNode }) => (
   <motion.div
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
